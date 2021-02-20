@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "555736722264",
+    "project_id": "mcmillanrestaurant-44ee3",
+    "storage_bucket": "mcmillanrestaurant-44ee3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555736722264:android:a5adf235974ce62d84132d",
+        "android_client_info": {
+          "package_name": "com.example.app_restaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555736722264-39mmfhbodpu6v8bki5qf9aq8peqdh3vh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPUlIhtasSHK2ZwIELfeU52u4U7alBlug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555736722264-39mmfhbodpu6v8bki5qf9aq8peqdh3vh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
