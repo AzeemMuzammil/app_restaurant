@@ -150,7 +150,7 @@ class _RegisterViewState extends State<RegisterView> {
           listenWhen: (pre, current) => pre.error != current.error,
           listener: (context, state) {
             if (state.error != "") {
-              customSnackBar?.showLoadingSnackBar();
+              customSnackBar?.showErrorSnackBar(state.error);
             } else {
               customSnackBar?.hideAll();
             }

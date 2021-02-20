@@ -50,10 +50,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         try {
           loggedInUser = await auth.login(email, password);
         } catch (e) {
+          _addErr(e);
           yield state.clone(
             loading: false,
             loggedIn: false,
-            error: "Login Failed",
           );
           break;
         }
@@ -73,6 +73,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               loggedIn: true,
             );
           } else {
+            _addErr("Login Failed");
             rootBloc.add(LogoutEvent());
             yield state.clone(
               loading: false,
@@ -96,6 +97,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         final lastName = e.lastName;
         final password = e.password;
 
+        if ([null, ""].contains(email) ||
+            [null, ""].contains(firstName) ||
+            [null, ""].contains(lastName) ||
+            [null, ""].contains(password)) {
+          yield state.clone(
+            error: "Fields cannot be empty",
+          );
+          break;
+        }
+
         yield state.clone(loading: true);
 
         User registeredUser;
@@ -103,10 +114,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         try {
           registeredUser = await auth.register(email, password);
         } catch (e) {
+          _addErr(e);
           yield state.clone(
             loading: false,
             loggedIn: false,
-            error: "Registration Failed",
           );
           break;
         }
